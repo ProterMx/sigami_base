@@ -140,7 +140,7 @@ class  Sigami_Base {
                 wp_enqueue_script('comment-reply');
         }
 
-        wp_register_style('jutzu', get_template_directory_uri() . '/library/dist/css/jutzu.min.css', array(), '1.0', 'all');
+        wp_register_style('jutzu', get_template_directory_uri() . '/library/dist/css/jutzu.css', array(), '1.0', 'all');
         wp_enqueue_style('jutzu');
 
         wp_register_script('jutzu',
