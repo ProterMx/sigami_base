@@ -8,13 +8,13 @@ module.exports = function(grunt) {
       },
       all: [
         'library/js/scripts.js',
-        'bower_components/bootstrap/js/*.js'
+        'vendor/bootstrap/js/*.js'
       ]
     },
     less: {
       dist: {
         files: {
-          'library/dist/css/styles.css': [
+          'library/dist/css/jutzu.css': [
             'library/less/styles.less'
           ]
         },
@@ -24,21 +24,21 @@ module.exports = function(grunt) {
           // To enable, set sourceMap to true and update sourceMapRootpath based on your install
           sourceMap: true,
           sourceMapFilename: 'library/dist/css/styles.css.map',
-          sourceMapRootpath: '/wp-content/themes/wordpress-bootstrap/' // If you name your theme something different you may need to change this
+          sourceMapRootpath: '/wp-content/themes/sigami_base/' // If you name your theme something different you may need to change this
         }
       }
     },
     uglify: {
       dist: {
         files: {
-          'library/dist/js/scripts.min.js': [
+          'library/dist/js/jutzu.min.js': [
             'library/js/*.js'
           ]
           // Consider adding bootstrap js files here to consolidate your browser requests
         },
         options: {
           // JS source map: to enable, uncomment the lines below and update sourceMappingURL based on your install
-          // sourceMap: 'assets/js/scripts.min.js.map',
+          sourceMap: 'library/dist/js/jutzu.min.js.map',
           // sourceMappingURL: '/app/themes/roots/assets/js/scripts.min.js.map'
         }
       }
@@ -65,8 +65,8 @@ module.exports = function(grunt) {
     watch: {
       less: {
         files: [
-          'bower_components/bootstrap/less/*.less',
-          'bower_components/font-awesome/less/*.less',
+          'vendor/bootstrap/less/*.less',
+          'vendor/font-awesome/less/*.less',
           'library/less/*.less'
         ],
         tasks: ['less', 'version']

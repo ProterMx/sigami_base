@@ -14,17 +14,17 @@
 							
 							<div class="page-header"><h1 class="h2"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1></div>
 							
-							<p class="meta"><?php _e("Posted", "wpbootstrap"); ?> <time datetime="<?php echo the_time('Y-m-j'); ?>" pubdate><?php echo get_the_date('F jS, Y', '','', FALSE); ?></time> <?php _e("by", "wpbootstrap"); ?> <?php the_author_posts_link(); ?> <span class="amp">&</span> <?php _e("filed under", "wpbootstrap"); ?> <?php the_category(', '); ?>.</p>
+							<p class="meta"><?php _e("Posted", "sigami"); ?> <time datetime="<?php echo the_time('Y-m-j'); ?>" pubdate><?php echo get_the_date('F jS, Y', '','', FALSE); ?></time> <?php _e("by", "sigami"); ?> <?php the_author_posts_link(); ?> <span class="amp">&</span> <?php _e("filed under", "sigami"); ?> <?php the_category(', '); ?>.</p>
 						
 						</header> <!-- end article header -->
 					
 						<section class="post_content clearfix">
-							<?php the_content( __("Read more &raquo;","wpbootstrap") ); ?>
+							<?php the_content( __("Read more &raquo;","sigami") ); ?>
 						</section> <!-- end article section -->
 						
 						<footer>
 			
-							<p class="tags"><?php the_tags('<span class="tags-title">' . __("Tags","wpbootstrap") . ':</span> ', ' ', ''); ?></p>
+							<p class="tags"><?php the_tags('<span class="tags-title">' . __("Tags","sigami") . ':</span> ', ' ', ''); ?></p>
 							
 						</footer> <!-- end article footer -->
 					
@@ -39,8 +39,8 @@
 					<?php } else { // if it is disabled, display regular wp prev & next links ?>
 						<nav class="wp-prev-next">
 							<ul class="pager">
-								<li class="previous"><?php next_posts_link(_e('&laquo; Older Entries', "wpbootstrap")) ?></li>
-								<li class="next"><?php previous_posts_link(_e('Newer Entries &raquo;', "wpbootstrap")) ?></li>
+								<li class="previous"><?php next_posts_link(_e('&laquo; Older Entries', "sigami")) ?></li>
+								<li class="next"><?php previous_posts_link(_e('Newer Entries &raquo;', "sigami")) ?></li>
 							</ul>
 						</nav>
 					<?php } ?>		
@@ -49,10 +49,10 @@
 					
 					<article id="post-not-found">
 					    <header>
-					    	<h1><?php _e("Not Found", "wpbootstrap"); ?></h1>
+					    	<h1><?php _e("Not Found", "sigami"); ?></h1>
 					    </header>
 					    <section class="post_content">
-					    	<p><?php _e("Sorry, but the requested resource was not found on this site.", "wpbootstrap"); ?></p>
+					    	<p><?php _e("Sorry, but the requested resource was not found on this site.", "sigami"); ?></p>
 					    </section>
 					    <footer>
 					    </footer>

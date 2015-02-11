@@ -21,7 +21,7 @@
 						
 						<footer>
 			
-							<?php the_tags('<p class="tags"><span class="tags-title">' . __("Tags","wpbootstrap") . ':</span> ', ', ', '</p>'); ?>
+							<?php the_tags('<p class="tags"><span class="tags-title">' . __("Tags","sigami") . ':</span> ', ', ', '</p>'); ?>
 							
 						</footer> <!-- end article footer -->
 					
@@ -35,10 +35,10 @@
 					
 					<article id="post-not-found">
 					    <header>
-					    	<h1><?php _e("Not Found", "wpbootstrap"); ?></h1>
+					    	<h1><?php _e("Not Found", "sigami"); ?></h1>
 					    </header>
 					    <section class="post_content">
-					    	<p><?php _e("Sorry, but the requested resource was not found on this site.", "wpbootstrap"); ?></p>
+					    	<p><?php _e("Sorry, but the requested resource was not found on this site.", "sigami"); ?></p>
 					    </section>
 					    <footer>
 					    </footer>

@@ -10,7 +10,7 @@
 						
 						<div class="alert alert-message">
 						
-							<p><?php _e("Please activate some Widgets","wpbootstrap"); ?>.</p>
+							<p><?php _e("Please activate some Widgets","sigami"); ?>.</p>
 						
 						</div>
 

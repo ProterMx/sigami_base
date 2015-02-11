@@ -27,7 +27,7 @@ Template Name: Full Width Page
 						
 						<footer>
 			
-							<p class="clearfix"><?php the_tags('<span class="tags">' . __("Tags","wpbootstrap") . ': ', ', ', '</span>'); ?></p>
+							<p class="clearfix"><?php the_tags('<span class="tags">' . __("Tags","sigami") . ': ', ', ', '</span>'); ?></p>
 							
 						</footer> <!-- end article footer -->
 					
@@ -41,10 +41,10 @@ Template Name: Full Width Page
 					
 					<article id="post-not-found">
 					    <header>
-					    	<h1><?php _e("Not Found", "wpbootstrap"); ?></h1>
+					    	<h1><?php _e("Not Found", "sigami"); ?></h1>
 					    </header>
 					    <section class="post_content">
-					    	<p><?php _e("Sorry, but the requested resource was not found on this site.", "wpbootstrap"); ?></p>
+					    	<p><?php _e("Sorry, but the requested resource was not found on this site.", "sigami"); ?></p>
 					    </section>
 					    <footer>
 					    </footer>
