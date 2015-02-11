@@ -18,7 +18,7 @@ class  Sigami_Views
     private function Sigami_Views()
     {
         /** Get <head> <title> to behave like other themes **/
-        add_filter('wp_title', array($this,'wp_bootstrap_wp_title'), 10, 2);
+        add_filter('wp_title', array($this,'wp_title'), 10, 2);
         /** Remove <p> tags from around images **/
         add_filter('the_content', array($this,'the_content'));
         /** Add lead class to first paragraph **/
