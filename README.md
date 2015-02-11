@@ -9,7 +9,7 @@ _______________
 To get started, open Terminal or a command prompt and run:
 
 	cd path/to/wp-content/themes
-	git clone https://github.com/320press/wordpress-bootstrap.git
+	git clone https://github.com/sigami/sigami_base.git
 	npm install
 	grunt dev
 
