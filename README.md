@@ -1,9 +1,7 @@
 WordPress Skeleton
 ===================
 
-This WordPress Theme is a combination of 320Press WordPress Boostrap and Roots theme. 
-
-I read all code of both themes and got the best from them.
+This WordPress Theme is a combination of 320Press WordPress Boostrap, Roots Theme and Custom code.
 
 GETTING STARTED
 _______________
@@ -20,12 +18,14 @@ How it works
 ____________
 
 `npm install` Downloads the node modules necessary to run the grunt tasks.
-`bower install` Downloads all dependencies: JavaScript and CSS into vendor folder
+
+`bower install` Downloads all dependencies: JavaScript and CSS into vendor folder.
+
 `grunt dev` Runs a watch for all less files or js.
 
 After you installed the theme, and run `grunt dev`, all less files or js files you modify inside library/ will be compressed into one library/dist/css/jutzu.css and library/dist/js/jutzu.min.js using grunt.
 
-All Bootstrap JavaScript is included
+All Bootstrap and WOW JavaScript is included, as well as css for font awesome, and animate.css.
 
 Extra Dependencies included 
 ___________________________
