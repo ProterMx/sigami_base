@@ -2,7 +2,8 @@
 /**
  * Esta clase remueve valores de wordpress por default y hace que el código de salida sea más limpio.
  */
-class Sigami_Cleanup
+new Sigami_Cleanup();
+class Sigremove_self_closing_tagsami_Cleanup
 {
 
     function Sigami_Cleanup()
@@ -13,11 +14,11 @@ class Sigami_Cleanup
             add_action($action, array($this, $action));
         }
         foreach ($filters as $filter) {
-            add_action($filter, array($this, $filter));
+            add_filter($filter, array($this, $filter));
         }
-        add_filter('get_avatar', 'remove_self_closing_tags'); // <img />
-        add_filter('comment_id_fields', 'remove_self_closing_tags'); // <input />
-        add_filter('post_thumbnail_html', 'remove_self_closing_tags'); // <img />
+        add_filter('get_avatar', array($this,'remove_self_closing_tags')); // <img />
+        add_filter('comment_id_fields', array($this,'remove_self_closing_tags')); // <input />
+        add_filter('post_thumbnail_html', array($this,'remove_self_closing_tags')); // <img />
         add_filter('the_generator', '__return_false');
     }
 

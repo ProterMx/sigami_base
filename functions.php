@@ -5,8 +5,7 @@ Description: WordPress Boostrap Skeleton
 Author: Miguel Sirvent
 */
 define('SIGAMI_LANG', 'es');
-$files = glob('library/classes/*.php');
-
+$files = glob(get_stylesheet_directory()."/library/classes/*.php");
 foreach ($files as $file) {
     require_once ($file);
 }
