@@ -4,12 +4,6 @@ Name: Sigami Base
 Description: WordPress Boostrap Skeleton
 Author: Miguel Sirvent
 */
-define('SIGAMI_LANG', 'es');
-$files = glob(get_stylesheet_directory()."/library/classes/*.php");
-foreach ($files as $file) {
-    require_once ($file);
-}
-
 class  Sigami_Base {
     private static $instance = null;
     private $theme_path;
@@ -23,6 +17,10 @@ class  Sigami_Base {
     private function Sigami_Base() {
         $this->theme_dir = get_stylesheet_directory();
         $this->theme_url = get_stylesheet_directory_uri();
+        $files = glob($this->theme_dir."/library/classes/*.php");
+        foreach ($files as $file) {
+            require_once ($file);
+        }
         load_theme_textdomain('sigami', $this->theme_path . '/languages');
         // Set content width
         if (!isset($content_width)) $content_width = 580;
@@ -142,51 +140,16 @@ class  Sigami_Base {
         wp_register_style('jutzu', get_template_directory_uri() . '/library/dist/css/jutzu.css', array(), '1.0', 'all');
         wp_enqueue_style('jutzu');
 
-        wp_register_script('jutzu',
-            get_template_directory_uri() . '/library/dist/js/jutzu.min.js',
-            array('jquery'),
-            '1.2');
-
+        wp_register_script('jutzu', get_template_directory_uri() . '/library/dist/js/jutzu.min.js', array('jquery'), '1.2');
         wp_enqueue_script('jutzu');
+
     }
+    static function main_nav_fallback(){
+        wp_page_menu( $args = array() );
+    }
+    static function footer_links_fallback(){
+        wp_page_menu( $args = array() );
+    }
+
 }
 Sigami_Base::get_instance();
-
-function wp_bootstrap_main_nav()
-{
-    // Display the WordPress menu if available
-    wp_nav_menu(
-        array(
-            'menu' => 'main_nav', /* menu name */
-            'menu_class' => 'nav navbar-nav',
-            'theme_location' => 'main_nav', /* where in the theme it's assigned */
-            'container' => 'false', /* container class */
-            'fallback_cb' => 'wp_bootstrap_main_nav_fallback', /* menu fallback */
-        )
-    );
-}
-
-function wp_bootstrap_footer_links()
-{
-    // Display the WordPress menu if available
-    wp_nav_menu(
-        array(
-            'menu' => 'footer_links', /* menu name */
-            'theme_location' => 'footer_links', /* where in the theme it's assigned */
-            'container_class' => 'footer-links clearfix', /* container class */
-            'fallback_cb' => 'wp_bootstrap_footer_links_fallback' /* menu fallback */
-        )
-    );
-}
-
-// this is the fallback for header menu
-function wp_bootstrap_main_nav_fallback()
-{
-    /* you can put a default here if you like */
-}
-
-// this is the fallback for footer menu
-function wp_bootstrap_footer_links_fallback()
-{
-    /* you can put a default here if you like */
-}

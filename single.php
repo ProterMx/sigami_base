@@ -2,7 +2,7 @@
 			
 			<div id="content" class="clearfix row">
 			
-				<div id="main" class="col-sm-8 clearfix" role="main">
+				<main id="main" class="col-sm-8 clearfix" role="main">
 
 					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 					
@@ -59,7 +59,7 @@
 					
 					<?php endif; ?>
 			
-				</div> <!-- end #main -->
+				</main> <!-- end #main -->
     
 				<?php get_sidebar(); // sidebar 1 ?>
     

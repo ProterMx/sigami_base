@@ -48,7 +48,8 @@ class Sigami_Cleanup
                 $attributes[] = 'dir="rtl"';
             }
         }
-        $attributes[] = 'lang="' . SIGAMI_LANG . '"';
+        $local = explode("_",get_locale());
+        $attributes[] = 'lang="' . $local[0] . '"';
         $output = implode(' ', $attributes);
         return $output;
     }

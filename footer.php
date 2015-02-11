@@ -12,7 +12,16 @@
 		          </div>
 					
 					<nav class="clearfix">
-						<?php wp_bootstrap_footer_links(); // Adjust using Menus in Wordpress Admin ?>
+						<?php
+							wp_nav_menu(
+								array(
+									'menu' => 'footer_links', /* menu name */
+									'theme_location' => 'footer_links', /* where in the theme it's assigned */
+									'container_class' => 'footer-links clearfix', /* container class */
+									'fallback_cb' => array('Sigami_Base','footer_links_fallback') /* menu fallback */
+								)
+							);
+						?>
 					</nav>
 					
 					<p class="pull-right"><a href="http://320press.com" id="credit320" title="320Press & SIGAMI">SIGAMI</a></p>

@@ -47,7 +47,17 @@
 					</div>
 
 					<div class="collapse navbar-collapse navbar-responsive-collapse">
-						<?php wp_bootstrap_main_nav(); // Adjust using Menus in Wordpress Admin ?>
+						<?php
+							wp_nav_menu(
+								array(
+									'menu' => 'main_nav', /* menu name */
+									'menu_class' => 'nav navbar-nav',
+									'theme_location' => 'main_nav', /* where in the theme it's assigned */
+									'container' => 'false', /* container class */
+									'fallback_cb' => array('Sigami_Base','main_nav_fallback'), /* menu fallback */
+								)
+							);
+						?>
 
 						<?php //if(of_get_option('search_bar', '1')) {?>
 						<form class="navbar-form navbar-right" role="search" method="get" id="searchform" action="<?php echo home_url( '/' ); ?>">
