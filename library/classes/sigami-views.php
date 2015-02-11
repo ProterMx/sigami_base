@@ -1,8 +1,6 @@
 <?php
-
-/**
- * Class for views and other stuff
- */
+/** Class for views and other stuff
+-------------------------------------- */
 class  Sigami_Views
 {
     private static $instance = null;
@@ -23,8 +21,8 @@ class  Sigami_Views
         add_filter('the_content', array($this,'the_content'));
         /** Add lead class to first paragraph **/
         add_filter('the_content', array($this, 'the_content_lead'));
-        /** Add entry-content-asset class  **/
-        add_filter('embed_oembed_htm', array($this, 'embed_oembed_htm'));
+        /** Add flex-video widescreen classes  **/
+        add_filter('embed_oembed_html', array($this, 'embed_oembed_html'));
         /** Excerpt stuff  **/
         add_filter('excerpt_length', array($this, 'excerpt_length'));
         add_filter('excerpt_more', array($this, 'excerpt_more'));
@@ -69,9 +67,9 @@ class  Sigami_Views
             return preg_replace('/<p([^>]+)?>/', '<p$1 class="lead">', $content, 1);
     }
 
-    function embed_oembed_htm($cache, $url, $attr = '', $post_ID = '')
+    function embed_oembed_html($cache, $url, $attr = '', $post_ID = '')
     {
-        return '<div class="entry-content-asset">' . $cache . '</div>';
+        return '<div class="flex-video widescreen" style="margin: 0 auto;text-align:center;">' . $cache . '</div>';
     }
 
     function excerpt_length($length)
@@ -87,7 +85,7 @@ class  Sigami_Views
 
 }
 
-Sigami_Views::get_instance();
+$sigamiViews = Sigami_Views::get_instance();
 
 // Numeric Page Navi (built into the theme by default)
 function wp_bootstrap_page_navi($before = '', $after = '')

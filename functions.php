@@ -25,9 +25,9 @@ class  Sigami_Base {
         // Set content width
         if (!isset($content_width)) $content_width = 580;
         /************* THUMBNAIL SIZE OPTIONS *************/
-        add_image_size('wpbs-featured', 780, 300, true);
-        add_image_size('wpbs-featured-home', 970, 311, true);
-        add_image_size('wpbs-featured-carousel', 970, 400, true);
+        add_image_size('featured', 780, 300, true);
+        add_image_size('featured-home', 970, 311, true);
+        add_image_size('featured-carousel', 970, 400, true);
         //ACTIONS
         add_action('after_setup_theme',array($this,'widgets_init'));
         /** Sidebars & Widgetizes Areas **/
@@ -73,7 +73,7 @@ class  Sigami_Base {
         register_sidebar(array(
             'id' => 'sidebar1',
             'name' => 'Main Sidebar',
-            'description' => 'Used on every page BUT the homepage page template.',
+            'description' => __('Used on every page BUT the homepage page template.','sigami'),
             'before_widget' => '<div id="%1$s" class="widget %2$s">',
             'after_widget' => '</div>',
             'before_title' => '<h4 class="widgettitle">',
@@ -81,9 +81,9 @@ class  Sigami_Base {
         ));
 
         register_sidebar(array(
-            'id' => 'sidebar2',
+            'id' => 'home-page',
             'name' => 'Homepage Sidebar',
-            'description' => 'Used only on the homepage page template.',
+            'description' => __('Used only on the homepage page template.','sigami'),
             'before_widget' => '<div id="%1$s" class="widget %2$s">',
             'after_widget' => '</div>',
             'before_title' => '<h4 class="widgettitle">',

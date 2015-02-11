@@ -15,7 +15,8 @@ module.exports = function(grunt) {
       dist: {
         files: {
           'library/dist/css/jutzu.css': [
-            'library/less/styles.less'
+              'vendor/animate.css/animate.css',
+              'library/less/styles.less'
           ]
         },
         options: {
@@ -30,8 +31,9 @@ module.exports = function(grunt) {
       dist: {
         files: {
           'library/dist/js/jutzu.min.js': [
-              'library/js/*.js',
-              'vendor/dist/js/bootstrap.js'
+            'vendor/bootstrap/dist/js/bootstrap.js',
+            'vendor/wow/dist/wow.js',
+            'library/js/*.js'
           ]
         },
         options: {

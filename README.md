@@ -30,24 +30,22 @@ All Bootstrap JavaScript is included
 Extra Dependencies included 
 ___________________________
 
-* Modernizer
 * Font Awesome
 * Animate.css
 * WOW
-* JQuery
 
 Multi-Lingual
 _____________
 
-WP-Bootstrap is translated in 7 languages - Spanish, French, Portuguese, Italian, Dutch, Swedish and German. 
+Translated in 7 languages - Spanish, French, Portuguese, Italian, Dutch, Swedish and German. 
 
 Page Templates
 ______________
 
 We’ve packaged four different page templates into this theme.
 
-    - Homepage template (seen on the homepage of this site - http://www.320press.com/wp-bootstrap)
-    - Standard page with right sidebar (this page)
+    - Homepage template 
+    - Standard page with right sidebar 
     - Page with left sidebar
     - Full width page
 

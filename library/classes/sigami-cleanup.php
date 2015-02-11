@@ -1,12 +1,20 @@
 <?php
-/**
- * Esta clase remueve valores de wordpress por default y hace que el código de salida sea más limpio.
- */
-new Sigami_Cleanup();
+/**  Cleans output html
+-------------------------------------- */
 class Sigami_Cleanup
 {
 
-    function Sigami_Cleanup()
+    private static $instance = null;
+
+    public static function get_instance()
+    {
+        if (null == self::$instance) {
+            self::$instance = new self;
+        }
+        return self::$instance;
+    }
+
+    private function Sigami_Cleanup()
     {
         $actions = array('init', 'template_redirect');
         $filters = array('language_attributes', 'style_loader_tag', 'body_class', 'get_bloginfo_rss', 'request');
@@ -111,4 +119,4 @@ class Sigami_Cleanup
     }
 }
 
-
+Sigami_Cleanup::get_instance();

@@ -1,11 +1,19 @@
 <?php
-/*  Menu and Boostrap Compatibility
+/**  Menu and Boostrap Compatibility
  -------------------------------------- */
-new Sigami_Bootstrap;
-
 Class Sigami_Bootstrap
 {
-    function Sigami_Bootstrap()
+    private static $instance = null;
+
+    public static function get_instance()
+    {
+        if (null == self::$instance) {
+            self::$instance = new self;
+        }
+        return self::$instance;
+    }
+
+    private function Sigami_Bootstrap()
     {
         /*********** Nav Menu ************/
         add_filter('nav_menu_css_class', array($this, 'nav_menu_css_class'), 10, 2);
@@ -142,6 +150,8 @@ Class Sigami_Bootstrap
         return $html;
     }
 }
+
+Sigami_Bootstrap::get_instance();
 
 class Sigami_Walker extends Walker_Nav_Menu
 {

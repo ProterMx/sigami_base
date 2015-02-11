@@ -39,7 +39,7 @@ Template Name: Homepage
 								
 							</div>
 							
-							<?php get_sidebar('sidebar2'); // sidebar 2 ?>
+							<?php get_sidebar('front-page'); // sidebar front-page ?>
 													
 						</section> <!-- end article header -->
 						

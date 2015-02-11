@@ -22,11 +22,9 @@
     "tests"
   ],
   "dependencies": {
-    "modernizer": "~2.8.2",
     "font-awesome": "~4.2.0",
     "bootstrap": "~3.3.1",
     "animate.css": "~3.2.0",
     "wow": "~1.0.3",
-    "jquery": "~2.1.3"
   }
 }
