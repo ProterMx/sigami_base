@@ -36,7 +36,7 @@ class  Sigami_Base {
         /** Sidebars & Widgetizes Areas **/
         add_action('widgets_init', array($this,'widgets_init'));
         //add_action( 'admin_enqueue_scripts', array( $this, 'admin_enqueue_scripts' ) );
-        //add_action( 'wp_enqueue_scripts', array( $this, 'wp_enqueue_scripts' ) );
+        add_action( 'wp_enqueue_scripts', array( $this, 'wp_enqueue_scripts' ) );
         //add_action( 'init', array( $this, 'init' ) );
         //add_action( 'admin_init', array( $this, 'admin_init' ) );
         //FILTERS
