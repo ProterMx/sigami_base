@@ -23,7 +23,7 @@ module.exports = function(grunt) {
           // LESS source map
           // To enable, set sourceMap to true and update sourceMapRootpath based on your install
           sourceMap: true,
-          sourceMapFilename: 'library/dist/css/styles.css.map',
+          sourceMapFilename: 'library/dist/css/jutzu.css.map',
           sourceMapRootpath: '/wp-content/themes/sigami_base/' // If you name your theme something different you may need to change this
         }
       }
@@ -43,25 +43,6 @@ module.exports = function(grunt) {
         }
       }
     },
-    grunticon: {
-      myIcons: {
-          files: [{
-              expand: true,
-              cwd: 'library/img',
-              src: ['*.svg', '*.png'],
-              dest: "library/img"
-          }],
-          options: {
-          }
-      }
-    },
-    version: {
-      assets: {
-        files: {
-          'functions.php': ['library/dist/css/styles.css', 'library/dist/js/scripts.min.js']
-        }
-      }
-    },
     watch: {
       less: {
         files: [
@@ -69,7 +50,7 @@ module.exports = function(grunt) {
           'vendor/font-awesome/less/*.less',
           'library/less/*.less'
         ],
-        tasks: ['less', 'version']
+        tasks: ['less']
       },
       js: {
         files: [
@@ -84,7 +65,7 @@ module.exports = function(grunt) {
           livereload: true
         },
         files: [
-          'library/dist/css/styles.css',
+          'library/dist/css/jutzu.css',
           'library/js/*',
           'style.css',
           '*.php'
@@ -105,29 +86,21 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-less');
-  grunt.loadNpmTasks('grunt-wp-assets');
-  grunt.loadNpmTasks('grunt-grunticon');
-  grunt.loadNpmTasks('grunt-svgstore');
 
   // Register tasks
   grunt.registerTask('default', [
     'clean',
     'less',
     'uglify',
-    'grunticon',
-    'version'
   ]);
 
   grunt.registerTask('build', [
     'clean:dist',
     'less',
     'uglify',
-    'grunticon',
-    'version'
   ]);
 
   grunt.registerTask('dev', [
-    'grunticon',
     'watch'
   ]);
 
