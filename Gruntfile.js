@@ -20,8 +20,6 @@ module.exports = function(grunt) {
         },
         options: {
           compress: true,
-          // LESS source map
-          // To enable, set sourceMap to true and update sourceMapRootpath based on your install
           sourceMap: true,
           sourceMapFilename: 'library/dist/css/jutzu.css.map',
           sourceMapRootpath: '/wp-content/themes/sigami_base/' // If you name your theme something different you may need to change this
@@ -32,14 +30,12 @@ module.exports = function(grunt) {
       dist: {
         files: {
           'library/dist/js/jutzu.min.js': [
-            'library/js/*.js'
+              'library/js/*.js',
+              'vendor/dist/js/bootstrap.js'
           ]
-          // Consider adding bootstrap js files here to consolidate your browser requests
         },
         options: {
-          // JS source map: to enable, uncomment the lines below and update sourceMappingURL based on your install
-          sourceMap: 'library/dist/js/jutzu.min.js.map',
-          // sourceMappingURL: '/app/themes/roots/assets/js/scripts.min.js.map'
+          sourceMap: 'library/dist/js/jutzu.min.js.map'
         }
       }
     },

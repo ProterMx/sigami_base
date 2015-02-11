@@ -1,7 +1,9 @@
 WordPress Skeleton
 ===================
 
-Bootstrap (http://getbootstrap.com) in WordPress theme form.
+This WordPress Theme is a combination of 320Press WordPress Boostrap and Roots theme. 
+
+I read all code of both themes and got the best from them.
 
 GETTING STARTED
 _______________
@@ -14,14 +16,25 @@ To get started, open Terminal or a command prompt and run:
 	bower install
 	grunt dev
 
-FEATURES
-________
+How it works
+____________
 
-We’ve built the WP Bootstrap theme so that it could be used as-is as a very basic theme or as a starting point for theme developers. It uses v3.3.1 of Bootstrap.
+`npm install` Downloads the node modules necessary to run the grunt tasks.
+`bower install` Downloads all dependencies: JavaScript and CSS into vendor folder
+`grunt dev` Runs a watch for all less files or js.
 
-WP-Bootstrap uses grunt as a task manager to help aid development. Check out the gruntfile.js file for more detail on the default tasks. WP-Bootstrap comes with the livereload, less, grunticon and more tasks out of the box. 
+After you installed the theme, and run `grunt dev`, all less files or js files you modify inside library/ will be compressed into one library/dist/css/jutzu.css and library/dist/js/jutzu.min.js using grunt.
 
-Watch or star this project to keep up with its progress.
+All Bootstrap JavaScript is included
+
+Extra Dependencies included 
+___________________________
+
+* Modernizer
+* Font Awesome
+* Animate.css
+* WOW
+* JQuery
 
 Multi-Lingual
 _____________
