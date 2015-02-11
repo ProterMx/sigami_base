@@ -3,7 +3,7 @@
  * Esta clase remueve valores de wordpress por default y hace que el código de salida sea más limpio.
  */
 new Sigami_Cleanup();
-class Sigremove_self_closing_tagsami_Cleanup
+class Sigami_Cleanup
 {
 
     function Sigami_Cleanup()
