@@ -29,7 +29,7 @@ class  Sigami_Base {
         add_image_size('featured-home', 970, 311, true);
         add_image_size('featured-carousel', 970, 400, true);
         //ACTIONS
-        add_action('after_setup_theme',array($this,'widgets_init'));
+        add_action('after_setup_theme',array($this,'after_setup_theme'));
         /** Sidebars & Widgetizes Areas **/
         add_action('widgets_init', array($this,'widgets_init'));
         //add_action( 'admin_enqueue_scripts', array( $this, 'admin_enqueue_scripts' ) );
