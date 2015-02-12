@@ -1,68 +1,70 @@
-<!doctype html>  
-
-<!--[if IEMobile 7 ]> <html <?php language_attributes(); ?>class="no-js iem7"> <![endif]-->
-<!--[if lt IE 7 ]> <html <?php language_attributes(); ?> class="no-js ie6"> <![endif]-->
-<!--[if IE 7 ]>    <html <?php language_attributes(); ?> class="no-js ie7"> <![endif]-->
-<!--[if IE 8 ]>    <html <?php language_attributes(); ?> class="no-js ie8"> <![endif]-->
+<!doctype html>
+<?php if( current_theme_supports('sigami-ie') ) : ?>
+<!--[if IEMobile 7 ]><html <?php language_attributes(); ?>class="no-js iem7"> <![endif]-->
+<!--[if lt IE 7 ]><html <?php language_attributes(); ?> class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]><html <?php language_attributes(); ?> class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]><html <?php language_attributes(); ?> class="no-js ie8"> <![endif]-->
 <!--[if (gte IE 9)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html <?php language_attributes(); ?> ><!--<![endif]-->
-	
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<title><?php wp_title( '|', true, 'right' ); ?></title>	
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-  		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
-		<?php wp_head(); ?>
+<?php else : ?>
+<html <?php language_attributes(); ?> >
+<?php endif; ?>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title><?php wp_title('|', true, 'right'); ?></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
+    <?php wp_head(); ?>
+    <?php if( current_theme_supports('sigami-ie') ) : ?>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+    <![endif]-->
+    <?php endif; ?>
+</head>
 
-		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-		<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-		<script src="https://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
-		<![endif]-->
-	</head>
-	
-	<body <?php body_class(); ?>>
-				
-		<header role="banner">
-				
-			<div class="navbar navbar-default navbar-fixed-top">
-				<div class="container">
-          
-					<div class="navbar-header">
-						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</button>
+<body <?php body_class(); ?>>
 
-						<a class="navbar-brand" title="<?php echo get_bloginfo('description'); ?>" href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a>
-					</div>
+<header role="banner">
 
-					<div class="collapse navbar-collapse navbar-responsive-collapse">
-						<?php
-							wp_nav_menu(
-								array(
-									'menu' => 'main_nav', /* menu name */
-									'menu_class' => 'nav navbar-nav',
-									'theme_location' => 'main_nav', /* where in the theme it's assigned */
-									'container' => 'false', /* container class */
-									'fallback_cb' => array('Sigami_Base','main_nav_fallback'), /* menu fallback */
-								)
-							);
-						?>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
 
-						<?php //if(of_get_option('search_bar', '1')) {?>
-						<form class="navbar-form navbar-right" role="search" method="get" id="searchform" action="<?php echo home_url( '/' ); ?>">
-							<div class="form-group">
-								<input name="s" id="s" type="text" class="search-query form-control" autocomplete="off" placeholder="<?php _e('Search','sigami'); ?>">
-							</div>
-						</form>
-						<?php //} ?>
-					</div>
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                        data-target=".navbar-responsive-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
 
-				</div> <!-- end .container -->
-			</div> <!-- end .navbar -->
-		
-		</header> <!-- end header -->
-		
-		<div class="container">
+                <a class="navbar-brand" title="<?php echo get_bloginfo('description'); ?>"
+                   href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a>
+            </div>
+
+            <div class="collapse navbar-collapse navbar-responsive-collapse">
+                <?php
+                wp_nav_menu(
+                    array(
+                        'menu' => 'main_nav', /* menu name */
+                        'menu_class' => 'nav navbar-nav',
+                        'theme_location' => 'main_nav', /* where in the theme it's assigned */
+                        'container' => 'false', /* container class */
+                        'fallback_cb' => array('Sigami_Base', 'main_nav_fallback'), /* menu fallback */
+                    )
+                );
+                ?>
+
+                <?php do_action('sigami_navbar') ?>
+            </div>
+
+        </div>
+        <!-- end .container -->
+    </nav>
+    <!-- end .navbar -->
+    <?php do_action('sigami_header') ?>
+</header>
+<!-- end header -->
+
+<div class="container">

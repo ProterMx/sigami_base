@@ -36,8 +36,6 @@ class  Sigami_Base {
         add_action( 'wp_enqueue_scripts', array( $this, 'wp_enqueue_scripts' ) );
         //add_action( 'init', array( $this, 'init' ) );
         //add_action( 'admin_init', array( $this, 'admin_init' ) );
-        //FILTERS
-        //$this->run_theme();
     }
     public function after_setup_theme(){
         add_theme_support('post-thumbnails');      // wp thumbnails (sizes handled in functions.php)
@@ -47,6 +45,7 @@ class  Sigami_Base {
         add_theme_support( 'html5', array(
             'search-form', 'comment-form', 'comment-list', 'gallery', 'caption'
         ) );
+        add_theme_support('sigami-ie');
         // Add post format support - if these are not needed, comment them out
 //        add_theme_support('post-formats',      // post formats
 //            array(
