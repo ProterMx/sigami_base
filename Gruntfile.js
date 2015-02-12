@@ -15,8 +15,8 @@ module.exports = function(grunt) {
       dist: {
         files: {
           'library/dist/css/jutzu.css': [
-              'vendor/animate.css/animate.css',
-              'library/less/styles.less'
+              'library/less/styles.less',
+              'vendor/animate.css/animate.css'
           ]
         },
         options: {
