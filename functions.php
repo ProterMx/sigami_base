@@ -45,7 +45,6 @@ class  Sigami_Base {
         add_theme_support( 'html5', array(
             'search-form', 'comment-form', 'comment-list', 'gallery', 'caption'
         ) );
-        add_theme_support('sigami-ie');
         // Add post format support - if these are not needed, comment them out
 //        add_theme_support('post-formats',      // post formats
 //            array(
@@ -66,6 +65,9 @@ class  Sigami_Base {
                 'main_nav' => 'The Main Menu',   // main nav in header
                 'footer_links' => 'Footer Links' // secondary nav in footer
             ));
+        /** Custom Theme Supports  **/
+        add_theme_support('sigami-ie'); //internet explorer 8 support
+        add_theme_support('sigami-grunt'); //reload browser on grunt, only for development
     }
     public function widgets_init()
     {
