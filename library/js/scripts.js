@@ -21,7 +21,7 @@ function addTwitterBSClass(thisObj) {
   	jQuery(thisObj).addClass('label');
   return true;
 }
-
+new WOW().init();
 // as the page loads, call these scripts
 jQuery(document).ready(function($) {
 
